@@ -3,8 +3,9 @@ import Contact from "./Components/Contact";
 import Header from "./Components/Header";
 import About from "./Components/About";
 import Error from "./Components/Error";
-
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import User from "./Components/User";
+import UserDetails from "./Components/UserDetails";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 function App() {
   return (
     <div className="App  ">
@@ -37,7 +38,27 @@ function App() {
               </>
             }
           />
-          <Route path="*" element={<Error></Error>} />
+          <Route
+            path="/user"
+            element={
+              <>
+                <Header />
+                <User />
+              </>
+            }
+          />
+          <Route
+            path="/user/userdetails"
+            element={
+              <>
+                <Header />
+                <UserDetails />
+              </>
+            }
+          />
+
+          {/* <Route path="/*" element={<Error></Error>} /> */}
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
     </div>
