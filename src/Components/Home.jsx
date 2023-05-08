@@ -3,7 +3,7 @@ import Textfield from "./Textfield";
 import Button from "./Button";
 import { useState, useEffect } from "react";
 import Output from "./Output";
-
+import { Link } from "react-router-dom";
 function Home() {
   // we can put dependences in states and props as well
   const [state, setState] = useState(0);
@@ -93,7 +93,7 @@ function Home() {
         {/* output */}
         {data.map((element, index) => {
           return (
-            <Output
+          <Link path={`/${element.id}`}> <div> <Output
               key={index}
               name={element.name}
               email={element.email}
@@ -103,7 +103,7 @@ function Home() {
               firstName={element.firstName}
               lastName={element.lastName}
               dob={element.dob}
-            ></Output>
+            ></Output> </div></Link>
           );
         })}
       </div>

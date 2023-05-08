@@ -48,7 +48,7 @@ function App() {
             }
           />
           <Route
-            path="/user/userdetails"
+            path=":userId"
             element={
               <>
                 <Header />
@@ -57,7 +57,8 @@ function App() {
             }
           />
 
-          {/* <Route path="/*" element={<Error></Error>} /> */}
+          {/* <Route path="*" element={<Error></Error>} /> */}
+          {/* OR */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
