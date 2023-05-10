@@ -3,23 +3,28 @@ import Contact from "./Components/Contact";
 import Header from "./Components/Header";
 import About from "./Components/About";
 import Error from "./Components/Error";
-import User from "./Components/User";
-import UserDetails from "./Components/UserDetails";
+import Userdetail from "./Components/Userdetail";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import Output from "./Components/Output";
 function App() {
   return (
     <div className="App  ">
       <BrowserRouter>
         <Routes>
           <Route
-            path="/"
+            path="/home"
             element={
               <>
                 <Header />
-                <Home />
+                <Home ></Home>
               </>
             }
-          />
+          >
+            <Route path="/home/:userId" element={ <>
+                <Header />
+               <Userdetail></Userdetail>
+              </>}/>
+            </Route>
           <Route
             path="/contact"
             element={
@@ -38,28 +43,11 @@ function App() {
               </>
             }
           />
-          <Route
-            path="/user"
-            element={
-              <>
-                <Header />
-                <User />
-              </>
-            }
-          />
-          <Route
-            path=":userId"
-            element={
-              <>
-                <Header />
-                <UserDetails />
-              </>
-            }
-          />
+    
 
-          {/* <Route path="*" element={<Error></Error>} /> */}
+          <Route path="*" element={<Error></Error>} />
           {/* OR */}
-          <Route path="*" element={<Navigate to="/" />} />
+          {/* <Route path="*" element={<Navigate to="/" />} /> */}
         </Routes>
       </BrowserRouter>
     </div>

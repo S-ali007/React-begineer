@@ -93,7 +93,8 @@ function Home() {
         {/* output */}
         {data.map((element, index) => {
           return (
-          <Link path={`/${element.id}`}> <div> <Output
+          <div> <Output
+              id={element.id}
               key={index}
               name={element.name}
               email={element.email}
@@ -103,7 +104,7 @@ function Home() {
               firstName={element.firstName}
               lastName={element.lastName}
               dob={element.dob}
-            ></Output> </div></Link>
+            ></Output> </div>
           );
         })}
       </div>

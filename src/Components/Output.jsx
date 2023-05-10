@@ -1,10 +1,11 @@
 import React from 'react'
 import Button from './Button'
+import {NavLink, Link } from 'react-router-dom'
 
-function Output({name,email,removeItem,index,age,firstName,lastName,dob}) {
+function Output({name,email,removeItem,index,age,firstName,lastName,dob,id}) {
 
   return (
-    <div>
+    <NavLink to={`/home/${id}`}><div>
        <div className="flex justify-between items-center w-[max-full] border-gray-300 border-2 p-1 gap-6 text-white font-bold bg-gray-500 ">
 
           <h4 className="pt-2" >{name}</h4>
@@ -17,7 +18,7 @@ function Output({name,email,removeItem,index,age,firstName,lastName,dob}) {
             return removeItem(index)
           }} ></Button>
         </div>
-    </div>
+    </div></NavLink>
   )
 }
 
