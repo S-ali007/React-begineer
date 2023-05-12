@@ -5,7 +5,7 @@ import {NavLink, Link } from 'react-router-dom'
 function Output({name,email,removeItem,index,age,firstName,lastName,dob,id}) {
 
   return (
-    <NavLink to={`/home/${id}`}><div>
+    <NavLink to={`/${id}`}><div>
        <div className="flex justify-between items-center w-[max-full] border-gray-300 border-2 p-1 gap-6 text-white font-bold bg-gray-500 ">
 
           <h4 className="pt-2" >{name}</h4>
