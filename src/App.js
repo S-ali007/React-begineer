@@ -20,11 +20,12 @@ function App() {
               </>
             }
           >
+           
+            </Route> 
             <Route path="/home/:userId" element={ <>
                 <Header />
                <Userdetail></Userdetail>
               </>}/>
-            </Route>
           <Route
             path="/contact"
             element={
